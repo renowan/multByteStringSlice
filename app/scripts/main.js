@@ -23,6 +23,8 @@ $(function(){
 
 	/* multByteStringSlice メイン部分
 	--------------------------------------------------------- */
+
+	// 参考URL: http://kei100.jp/afo/counter/
 	function strLength( strSrc ){
 		len = 0;
 		strSrc = escape(strSrc);
