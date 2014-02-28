@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Template &middot; Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="styles/bootstrap.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <div class="container-narrow">
+
+    	<div class="row">
+    		<div class="span10">
+    			<h3>全角半角混在の文字列を綺麗に短縮するJavaScript</h3>
+
+    			<h4>元の文字列（わざと半角を混ぜた）</h4>
+    			<ul id="output1">
+
+    			</ul>
+
+    			<h4>普通にSliceで文字数カット</h4>
+    			<ul id="output2">
+
+    			</ul>
+
+    			<h4>全角半角をカウントしてカット</h4>
+    			<ul id="output3">
+
+    			</ul>
+
+
+    			<div id="control">
+    				<div class="input-append">
+    				  <input class="span2" id="limitInput" type="text" placeholder="60">
+    				  <button class="btn" type="button" id="btn-slice">文字数カット</button>
+    				</div>
+    			</div>
+
+    		</div>
+    	</div>
+
+    	<div class="row">
+    		<div class="span10">
+    			<pre class="prettyprint linenums">
+function strLength( strSrc ){
+	len = 0;
+	strSrc = escape(strSrc);
+	for(i = 0; i < strSrc.length; i++, len++){
+		if(strSrc.charAt(i) == "%"){
+			if(strSrc.charAt(++i) == "u"){
+				i += 3;
+				len++;
+			}
+			i++;
+		}
+	}
+	return len;
+}
+
+function multByteStringSlice( str , strLimit ){
+	
+	var isSlice = false;
+
+	while( strLength(str) > strLimit ){
+		str = str.slice(0, str.length-1);
+		isSlice = true;
+	}
+
+	if( isSlice ){
+		str += '...';
+	}
+
+	return str;
+}
+    			</pre>
+    		</div>
+    	</div>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/underscore.js"></script>
+
+    <!-- <script src="bower_components/underscore/underscore.js"></script> -->
+    <script src="scripts/main.js"></script>
+
+  </body>
+</html>
