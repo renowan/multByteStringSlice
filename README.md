@@ -7,3 +7,5 @@ multByteStringSlice
 @ str : 文字数カットの対象文字列  
 @ strLimit : 文字数設定 int  
 multByteStringSlice( str , strLimit );  
+
+Demo:http://gallery.renowan.com/archive/multByteStringSlice/app/index.html
