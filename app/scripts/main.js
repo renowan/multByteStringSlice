@@ -1,5 +1,5 @@
 /*!
- * MultByteStringSlice v0.1
+ * MultByteStringSlice v0.2
  * 
  * Copyright (c) 2014 Renowan
  * This software is released under the MIT License, see README.md.
@@ -82,8 +82,8 @@ $(function(){
 			strLimit = $('#limitInput').val();
 		}
 		console.log('strLimit',strLimit);
-		var _arr = multByteStringSliceExe( strArr , strLimit );
-		console.log(_arr);
+		var _arr = _.clone(strArr);
+		_arr = multByteStringSliceExe( _arr , strLimit );
 		var html = setString(_arr);
 		$('#output3').html( html );
 	}
