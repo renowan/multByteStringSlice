@@ -8,4 +8,4 @@ multByteStringSlice
 @ strLimit : 文字数設定 int  
 multByteStringSlice( str , strLimit );  
 
-Demo:http://gallery.renowan.com/archive/multByteStringSlice/app/index.html
+Demo: http://gallery.renowan.com/archive/multByteStringSlice/app/index.html
